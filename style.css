@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #162542;
+    line-height: 26px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidebar1 {
+    grid-area: sidebar1;
+}
+
+.sidebar2 {
+    grid-area: sidebar2;
+}
+
+.sidebar3 {
+    grid-area: sidebar3;
+}
+
+.sidebar4 {
+    grid-area: sidebar4;
+}
+
+.sidebar5 {
+    grid-area: sidebar5;
+}
+
+.sidebar6 {
+    grid-area: sidebar6;
+    background-image: url("./images/pattern-square.svg");
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, auto) 1fr;
+    grid-template-areas: "header" "sidebar1" "sidebar2" "sidebar3" "sidebar4" "sidebar5";
+}
+
+.header {
+    padding: 40px 24px 64px 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (min-width:768px) {
+    .content {
+        grid-template-columns: 60% 40%;
+        grid-template-areas: "header  header" "sidebar1 sidebar2" "sidebar3 sidebar3" "sidebar4 sidebar4" "sidebar5 sidebar5";
+    }
+    .headerbutton {
+        width: 175px;
+        height: 58px;
+    }
+    .header {
+        padding: 40px 40px 64px 40px;
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    .content {
+        grid-template-columns: 165px 3fr 1fr 2fr 165px;
+        grid-template-areas: ". header  header header ." ". sidebar1 sidebar2 sidebar2 sidebar6" ". sidebar3 sidebar3  sidebar4 ." ". sidebar5 sidebar5 sidebar5 .";
+    }
+    .header {
+        padding: 55px 0 83px 0;
+    }
+    .sidebar6 {
+        display: block;
+        margin-left: 30px;
+    }
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+}
+
+button {
+    width: 151px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.headerbutton {
+    background-color: #E8EFF2;
+}
+
+.headerbutton:hover {
+    background-color: #162542;
+    color: white;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+.sidebar1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.preorder {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 32px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 70px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+p {
+    color: #7B8BAD;
+    position:relative;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+span {
+    color: #7B8BAD;
+    text-transform: uppercase;
+    margin-left: 32px;
+    font-weight: 700;
+}
+
+.sidebar1button {
+    background-color: #F16718;
+    color: white;
+}
+
+.sidebar1button:hover {
+    color: #FF9B62;
+}
+
+.sidebar2 {
+    background-image: url("./images/image-keyboard.jpg");
+    background-repeat: no-repeat;
+    height: 331px;
+    width: 90%;
+    overflow: hidden;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+    margin-bottom: 24px;
+    margin-left: 10%;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width:360px) {
+    .sidebar2 {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .sidebar2 {
+        width: 100%;
+        margin-left: 0;
+        height: 425px;
+        margin-bottom: 40px;
+        background-image: url("./images/image-keyboard.jpg");
+    }
+    .sidebar1 {
+        height: 425px;
+        justify-content: center;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    .sidebar2 {
+        background-image: url("./images/image-keyboard.jpg");
+        height: 480px;
+        width: 540px;
+        margin-right: 0;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        justify-self: end;
+    }
+    .sidebar1 {
+        margin-left: 0;
+        padding-left: 0;
+        height: 480px;
+    }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+.twoimages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.orange {
+    background-image: url("./images/image-phone-and-keyboard.jpg");
+    height: 193px;
+    flex-basis: 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    background-color: #F16718;
+    background-blend-mode: multiply;
+}
+
+.keyboard {
+    background-image: url("./images/image-glass-and-keyboard.jpg");
+    height: 193px;
+    flex-basis: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 24px;
+    margin-right: 24px;
+    border-radius: 20px;
+}
+
+.sidebar4 {
+    margin-top: 75px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    margin-bottom: 100px;
+    
+    
+}
+
+h2 {
+    
+    font-size:50px;
+    line-height: 60px;
+    font-weight: 900;
+    margin-bottom: 24px;
+    
+}
+
+
+@media only screen and (min-width:768px) {
+    .twoimages {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .orange {
+        background-image: url("./images/image-phone-and-keyboard.jpg");
+        height: 320px;
+        margin-left: 40px;
+    }
+    .keyboard {
+        background-image: url("./images/image-glass-and-keyboard.jpg");
+        height: 320px;
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+    .sidebar4 {
+        margin-top: 75px;
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    h2 {
+        flex-basis: 40%;
+    }
+    .sidebar4 p {
+        margin-left:15%;
+        line-height: 40px;
+        margin-top: 30px;
+        font-size: 30px;
+        
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    .orange {
+        background-image: url("./images/image-phone-and-keyboard.jpg");
+        height: 480px;
+        margin-left: 0px;
+    }
+    .keyboard {
+        background-image: url("./images/image-glass-and-keyboard.jpg");
+        height: 480px;
+        margin-right: 0px;
+    }
+    .sidebar4 {
+        margin-top: 75px;
+        padding-left: 125px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sidebar4 p {
+        margin-left: 0;
+        
+    }
+}
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+.sidebar5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.orangeback {
+    margin: 0 auto;
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    background-color: #F16718;
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.orangeback img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 900;
+    margin-bottom: 24px;
+}
+
+.sidebar5 p {
+    margin-bottom: 64px;
+}
+
+@media only screen and (min-width:768px) {
+    .sidebar5 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .sidebar5 p {
+        margin-bottom: 72px;
+    }
+    .square {
+        flex-basis: 45%;
+    }
+    .orangeback {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width:1400px) {
+    .sidebar5 {
+        margin-top: 168px;
+        padding-left: 0px;
+        padding-right: 0px;
+        flex-wrap: nowrap;
+    }
+    .sidebar5 p {
+        margin-bottom: 72px;
+    }
+    .orangeback {
+        margin-left: 0;
+    }
+    .square {
+        flex-basis: 20%;
+    }
+}
+
+footer {
+    margin-top: 100px;
+    padding: 50px;
+    text-align: center;
+    color: #7B8BAD;
+}
